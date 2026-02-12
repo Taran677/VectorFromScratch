@@ -68,15 +68,17 @@ struct MyVec
 
 int main()
 {
-    MyVec<char> arr;
-    arr.push_back('d');
-    arr.push_back('a');
-    arr.push_back('g');
-    arr.push_back('d');
-    arr.push_back('w');
-    arr.print();
-    MyVec<char> brr;
-    brr = arr;
-    brr.push_back('t');
-    brr.print();
+    MyVec<char> word;
+
+    word.push_back('C');
+    word.push_back('O');
+    word.push_back('D');
+    word.push_back('E');
+
+    MyVec<char> copiedWord = word;
+
+    copiedWord.push_back('R');
+
+    word.print();
+    copiedWord.print();
 }
