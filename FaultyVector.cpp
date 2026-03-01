@@ -37,6 +37,13 @@ struct MyVec
         arr[size++] = element;
     }
 
+    MyVec(MyVec &&other) noexcept : arr(other.arr), size(other.size), capacity(other.capacity)
+    {
+        other.arr = nullptr;
+        other.size = 0;
+        other.capacity = 0;
+    }
+
     void print() const
     {
         for (int i = 0; i < size; i++)
