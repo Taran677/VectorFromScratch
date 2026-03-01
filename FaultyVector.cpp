@@ -44,6 +44,24 @@ struct MyVec
         other.capacity = 0;
     }
 
+    MyVec &operator=(MyVec &&other) noexcept
+    {
+        if (this == &other)
+            return *this;
+
+        delete[] arr; 
+
+        arr = other.arr;
+        size = other.size;
+        capacity = other.capacity;
+
+        other.arr = nullptr;
+        other.size = 0;
+        other.capacity = 0;
+
+        return *this;
+    }
+
     void print() const
     {
         for (int i = 0; i < size; i++)
